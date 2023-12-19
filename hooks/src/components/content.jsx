@@ -1,22 +1,36 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import { AppContext } from './Context';
 
-const Content = () => {
+const UseEffect = () => {
+
+//use State
 
 let [count,setCount]=useState(0)
 let [displayPara, setDisplayPara] = useState(false);
-let [darkTheme, setDarkTheme] = useState(true);
+let {darkTheme,setDarkTheme}= useContext(AppContext)
 
 
 const IncreaseCount=()=>{
   setCount(count+1)
 }
+
 const DisplayPara=()=>{
   alert("Content button clicked")
   setDisplayPara(!displayPara);
 }
+
 const Theme=()=>{
   setDarkTheme(!darkTheme);
 }
+
+//use Effect
+
+useEffect(() => {
+    return()=>{
+        console.log(count)
+    }
+   ;
+  },[count]); 
 
   return (
     <div>
@@ -46,4 +60,4 @@ const Theme=()=>{
   )
 }
 
-export default Content
+export default UseEffect

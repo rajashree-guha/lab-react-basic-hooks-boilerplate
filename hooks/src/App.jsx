@@ -1,11 +1,16 @@
 import { useContext, useState } from 'react'
 import './App.css'
 import Content from './components/content'
+import Context from './components/Context'
+
 
 function App() {
 return(
   <div>
-    <Content/>
+
+    <Context>
+        <Content/>
+    </Context>
   </div>
 )
 }
